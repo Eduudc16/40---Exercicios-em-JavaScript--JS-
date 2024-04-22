@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPF com Pontuação</title>
+</head>
+<body>
+
+<form>
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" maxlength="14" oninput="formatarCPF()"><br><br>
+    <span id="cpfFormatado"></span><br>
+    <span id="contagemCaracteres">0</span> caracteres digitados
+</form>
+
+<script>
+    function formatarCPF() {
+        var cpf = document.getElementById('cpf').value;
+        var cpfFormatado = '';
+
+        if (cpf.length >= 3) {
+            cpfFormatado += cpf.substring(0, 3) ;
+        }
+        if (cpf.length >= 6) {
+            cpfFormatado += cpf.substring(3, 6) ;
+        }
+        if (cpf.length >= 9) {
+            cpfFormatado += cpf.substring(6, 9) ;
+        }
+        if (cpf.length >= 11) {
+            cpfFormatado += cpf.substring(9, 11);
+        }
+        if (cpf.length >= 14) {
+            cpfFormatado += cpf.substring(11, 14);
+        }
+
+        document.getElementById('cpfFormatado').textContent = cpfFormatado;
+
+        // Exibir quantidade de caracteres digitados
+        document.getElementById('contagemCaracteres').textContent = cpf.length;
+    }
+</script>
+
+</body>
+</html>

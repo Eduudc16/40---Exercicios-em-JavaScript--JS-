@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lâmpada</title>
+<style>
+    #lampada {
+        width: 200px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<img id="lampada" src="https://github.com/caiocr94/helpjs/blob/master/images/lampada.jpg?raw=true" alt="Lâmpada">
+
+<script>
+    const lampada = document.getElementById('lampada');
+
+    lampada.addEventListener('click', function() {
+        if (lampada.src === 'https://github.com/caiocr94/helpjs/blob/master/images/lampada.jpg?raw=true') {
+            lampada.src = 'https://github.com/caiocr94/helpjs/blob/master/images/lampada-on.jpg?raw=true';
+        } else {
+            lampada.src = 'https://github.com/caiocr94/helpjs/blob/master/images/lampada.jpg?raw=true';
+        }
+    });
+</script>
+
+</body>
+</html>

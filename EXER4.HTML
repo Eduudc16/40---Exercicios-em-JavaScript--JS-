@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Letras</title>
+</head>
+<body>
+  <input type="text" id="inputTexto" placeholder="Digite um texto">
+  <button onclick="exibirQuantidade()">Exibir Quantidade</button>
+
+  <script>
+    function exibirQuantidade() {
+      var texto = document.getElementById('inputTexto').value;
+      var quantidade = texto.length;
+      alert("A quantidade de letras é: " + quantidade);
+    }
+  </script>
+</body>
+</html>
