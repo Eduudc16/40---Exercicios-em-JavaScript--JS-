@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divisão de Campos</title>
+</head>
+<body>
+
+<input type="text" id="dividendo" placeholder="Digite o dividendo">
+<input type="text" id="divisor" placeholder="Digite o divisor">
+<button id="btn-divisao">Calcular Resto</button>
+<input type="text" id="resultado-resto" placeholder="Resto da Divisão" readonly>
+<span id="par-ou-impar"></span>
+
+<script>
+// Função que retorna "par" se o número for par e "ímpar" se for ímpar
+function parOuImpar(numero) {
+    return numero % 2 === 0 ? 'par' : 'ímpar';
+}
+
+document.getElementById('btn-divisao').addEventListener('click', function() {
+    var dividendo = parseFloat(document.getElementById('dividendo').value);
+    var divisor = parseFloat(document.getElementById('divisor').value);
+    
+    // Verifica se o divisor é zero
+    if (divisor === 0) {
+        alert('O divisor não pode ser zero.');
+        return;
+    }
+    
+    // Calcula o resto da divisão
+    var resto = dividendo % divisor;
+    document.getElementById('resultado-resto').value = resto;
+    
+    // Determina se o resto é par ou ímpar e exibe essa informação
+    var parOuImparTexto = parOuImpar(resto);
+    document.getElementById('par-ou-impar').textContent = 'O resto da divisão é ' + parOuImparTexto + '.';
+});
+</script>
+
+</body>
+</html>

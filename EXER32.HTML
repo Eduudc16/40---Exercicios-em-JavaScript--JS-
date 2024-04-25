@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar se contém 'dota'</title>
+</head>
+<body>
+
+<h2>Verificar se contém 'dota'</h2>
+
+<label for="texto">Insira o texto:</label><br>
+<input type="text" id="texto"><br><br>
+
+<button onclick="verificaDota()">Verificar</button><br><br>
+
+<div id="resultado"></div>
+
+<script>
+function verificaDota() {
+    var texto = document.getElementById('texto').value.toLowerCase();
+    var contemDota = texto.includes('dota');
+    var resultadoDiv = document.getElementById('resultado');
+    if (contemDota) {
+        resultadoDiv.textContent = "Verdadeiro";
+    } else {
+        resultadoDiv.textContent = "Falso";
+    }
+}
+</script>
+
+</body>
+</html>

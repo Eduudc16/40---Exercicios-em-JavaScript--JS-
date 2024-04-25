@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soma de Campos</title>
+</head>
+<body>
+
+<input type="text" id="soma1" placeholder="Digite o primeiro número">
+<input type="text" id="soma2" placeholder="Digite o segundo número">
+<button id="btn-soma">Somar</button>
+<input type="text" id="resultado-soma" placeholder="Resultado" readonly>
+
+<script>
+ 
+document.getElementById('btn-soma').addEventListener('click', function() {
+    var num1 = parseFloat(document.getElementById('soma1').value);
+    var num2 = parseFloat(document.getElementById('soma2').value);
+    var resultado = num1 + num2;
+    if (!isNaN(resultado)) {
+        document.getElementById('resultado-soma').value = resultado;
+    } else {
+        alert('Por favor, preencha ambos os campos com valores numéricos.');
+    }
+});
+</script>
+
+</body>
+</html>

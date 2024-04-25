@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Armazenar em Array e Destacar Números Pares</title>
+<style>
+  .par {
+    color: blue;
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="texto" placeholder="Digite um número">
+<button id="btn-adicionar">Adicionar</button>
+
+<ul id="lista">
+</ul>
+
+<script>
+// Array para armazenar os números
+var numeros = [];
+
+// Função para adicionar um número ao array e atualizar a lista
+function adicionarNumero() {
+    var numero = parseInt(document.getElementById('texto').value);
+    
+    // Adicionar o número ao array
+    numeros.push(numero);
+    
+    // Atualizar a lista
+    atualizarLista();
+    
+    // Limpar o campo de texto
+    document.getElementById('texto').value = '';
+}
+
+// Função para atualizar a lista
+function atualizarLista() {
+    var lista = document.getElementById('lista');
+    lista.innerHTML = '';
+    
+    // Iterar sobre os números e adicionar à lista
+    numeros.forEach(function(numero) {
+        var li = document.createElement('li');
+        li.textContent = numero;
+        
+        // Destacar números pares
+        if (numero % 2 === 0) {
+            li.classList.add('par');
+        }
+        
+        lista.appendChild(li);
+    });
+}
+
+// Adicionar evento de clique ao botão
+document.getElementById('btn-adicionar').addEventListener('click', adicionarNumero);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          text-align: center;
+        }
+        
+        #verde {
+          background-color: green;
+          color: white;
+        }
+        #vermelho {
+          background-color: red;
+          color: white;
+        }
+      </style>
+</head>
+<body>
+    <h1>Alterar Cor de Fundo</h1>
+    <button id="verde">Verde</button>
+    <button id="vermelho">Vermelho</button>
+<script>
+    // Função para alterar a cor de fundo
+    function alterarCor(cor) {
+      document.body.style.backgroundColor = cor;
+    }
+    // Adicionando eventos de clique aos botões
+    document.getElementById('verde').addEventListener('click', function() {
+      alterarCor('green');
+    });
+  
+    document.getElementById('vermelho').addEventListener('click', function() {
+      alterarCor('red');
+    });
+  </script>    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exemplo de InnerHTML com do-while</title>
+</head>
+<body>
+
+<div id="resultado"></div>
+
+<script>
+
+var divResultado = document.getElementById('resultado');
+
+
+var contador = 0;
+
+
+do {
+    divResultado.innerHTML += 'Repetição<br>';
+    contador++;
+} while (contador < 5);
+</script>
+
+</body>
+</html>

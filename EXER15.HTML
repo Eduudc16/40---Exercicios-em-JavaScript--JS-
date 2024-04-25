@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inserção de Texto com JavaScript</title>
+</head>
+<body>
+
+<div id="resultado"></div><br>
+
+<button onclick="inserirTexto()">Inserir Texto</button>
+
+<script>
+    
+    function inserirTexto() {
+        var resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.textContent = 'Esse texto foi inserido pelo JavaScript.';
+    }
+</script>
+
+</body>
+</html>

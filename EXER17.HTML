@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soma de Campos</title>
+</head>
+<body>
+
+<input type="text" id="soma1" placeholder="Digite o primeiro número">
+<input type="text" id="soma2" placeholder="Digite o segundo número">
+<button id="btn-soma">Somar</button>
+<input type="text" id="resultado-soma" placeholder="Resultado" readonly>
+
+<script>
+function somarNumerosComVerificacao(num1, num2) {
+    // Verifica se num1 é vazio ou não é um número
+    num1 = num1.trim() === '' || isNaN(num1) ? 0 : parseFloat(num1);
+    // Verifica se num2 é vazio ou não é um número
+    num2 = num2.trim() === '' || isNaN(num2) ? 0 : parseFloat(num2);
+    return num1 + num2;
+}
+
+document.getElementById('btn-soma').addEventListener('click', function() {
+    var num1 = document.getElementById('soma1').value;
+    var num2 = document.getElementById('soma2').value;
+    var resultado = somarNumerosComVerificacao(num1, num2);
+    document.getElementById('resultado-soma').value = resultado;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exibir Nomes em uma Lista</title>
+</head>
+<body>
+
+<ul id="nomes">
+</ul>
+
+<script>
+
+var deuses = ['Aegir', 'Aud', 'Balder', 'Bragi', 'Búri', 'Dag', 'Dellingr'];
+
+L
+var listaNomes = document.getElementById('nomes');
+
+
+deuses.forEach(function(nome) {
+    var listItem = document.createElement('li');
+    listItem.textContent = nome; 
+    listaNomes.appendChild(listItem); 
+});
+</script>
+
+</body>
+</html>

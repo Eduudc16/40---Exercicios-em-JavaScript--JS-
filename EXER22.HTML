@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificação de Idade</title>
+</head>
+<body>
+
+<label for="ano-nascimento">Ano de Nascimento:</label>
+<input type="text" id="ano-nascimento" placeholder="Digite o ano de nascimento">
+<button id="btn-verificar-idade">Verificar Idade</button>
+<p id="resultado-idade"></p>
+
+<script>
+
+function verificarIdade(anoNascimento) {
+    var anoAtual = new Date().getFullYear();
+    var idade = anoAtual - anoNascimento;
+    
+    if (idade >= 18) {
+        return 'Você é maior de idade.';
+    } else {
+        return 'Você é menor de idade.';
+    }
+}
+
+document.getElementById('btn-verificar-idade').addEventListener('click', function() {
+    var anoNascimento = parseInt(document.getElementById('ano-nascimento').value);
+    
+   
+    if (isNaN(anoNascimento)) {
+        alert('Por favor, insira um ano de nascimento válido.');
+        return;
+    }
+    
+   
+    var resultado = verificarIdade(anoNascimento);
+    
+    
+    document.getElementById('resultado-idade').textContent = resultado;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Próximo Mês</title>
+</head>
+<body>
+
+<h2>Próximo Mês</h2>
+
+<p id="proximo-mes"></p>
+
+<script>
+var dataAtual = new Date();
+dataAtual.setMonth(dataAtual.getMonth() + 1);
+var mesProximo = dataAtual.getMonth() + 1;
+var anoProximo = dataAtual.getFullYear();
+document.getElementById('proximo-mes').textContent = mesProximo + '/' + anoProximo;
+</script>
+
+</body>
+</html>

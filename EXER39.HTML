@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Armazenar em Array e Apresentar em Lista</title>
+</head>
+<body>
+
+<input type="text" id="texto" placeholder="Digite um item">
+<button id="btn-adicionar">Adicionar</button>
+
+<ul id="lista">
+</ul>
+
+<script>
+
+var itens = [];
+
+
+function adicionarItem() {
+    var texto = document.getElementById('texto').value;
+    
+    
+    itens.push(texto);
+    
+    
+    atualizarLista();
+    
+    
+    document.getElementById('texto').value = '';
+}
+
+
+function atualizarLista() {
+    var lista = document.getElementById('lista');
+    lista.innerHTML = '';
+    
+    
+    itens.forEach(function(item) {
+        var li = document.createElement('li');
+        li.textContent = item;
+        lista.appendChild(li);
+    });
+}
+
+
+document.getElementById('btn-adicionar').addEventListener('click', adicionarItem);
+</script>
+
+</body>
+</html>

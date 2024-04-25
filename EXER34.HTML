@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adivinhe o Número</title>
+</head>
+<body>
+
+<h2>Adivinhe o Número</h2>
+
+<button onclick="adivinharNumero()">Adivinhar</button>
+
+<script>
+function adivinharNumero() {
+    
+    var numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+    
+    
+    var numeroInserido = prompt("Adivinhe o número (entre 1 e 100):");
+    
+    
+    if (numeroInserido == numeroAleatorio) {
+        alert("Parabéns! Você acertou o número.");
+    } else {
+        alert("Ops! O número correto era: " + numeroAleatorio);
+    }
+}
+</script>
+
+</body>
+</html>

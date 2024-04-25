@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desconto de 5%</title>
+</head>
+<body>
+
+<input type="text" id="valor" placeholder="Digite o valor">
+<button id="btn-calcular-desconto">Calcular Desconto</button>
+<input type="text" id="resultado-desconto" placeholder="Valor com Desconto" readonly>
+
+<script>
+
+function calcularDesconto(valor) {
+    return valor * 0.05;
+}
+
+document.getElementById('btn-calcular-desconto').addEventListener('click', function() {
+    var valor = parseFloat(document.getElementById('valor').value);
+    
+    
+    if (isNaN(valor)) {
+        alert('Por favor, insira um valor válido.');
+        return;
+    }
+    
+    
+    var desconto = calcularDesconto(valor);
+    
+   
+    var valorComDesconto = valor - desconto;
+    
+    
+    document.getElementById('resultado-desconto').value = valorComDesconto.toFixed(2); 
+});
+</script>
+
+</body>
+</html>
