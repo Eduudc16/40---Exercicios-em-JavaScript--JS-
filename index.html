@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"> <!-- Adicione esta linha -->
+</head>
+<body>
+    <label for="cep">CEP</label>
+    <input id="cep" type="number">
+    <button onclick="getCep()">Buscar</button>
+    <p id="endereco"></p>
+
+    <script>
+        function getCep() {
+            var cep = document.getElementById("cep").value;
+            var apicep = "https://brasilapi.com.br/api/cep/v1/";
+            var url = apicep + cep + cep.valueAsNumber;
+
+            const myRequest = new Request(url, { method: "GET" });
+            fetch(myRequest).then(function(response) {
+                var contentType = response.headers.get("content-type");
+                if (contentType && contentType.indexOf("application/json") !== -1) {
+                    return response.json().then(function(Endereco) {
+                        document.getElementById("endereco").innerHTML = Endereco.street;
+                    });
+                } else {
+                    console.log("Oops, we haven't got JSON!");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

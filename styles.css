@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ccc; /* Fundo cinza */
+    color: #333; /* Cor do texto preta */
+}
+
+.container {
+    text-align: center;
+}
+
+label {
+    font-size: 18px;
+    color: #333; /* Cor do texto preta */
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #fff; /* Cor de fundo branca */
+    color: #333; /* Cor do texto preta */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2a2d30;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333; /* Cor do texto preta */
+}
